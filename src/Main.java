@@ -190,6 +190,9 @@ public class Main {
             dist.put(node, Integer.MAX_VALUE);  // 初始距离为无穷大
             prev.put(node, null);  // 没有前驱
         }
+        if(word1==""||word2==""){
+            return "Input is null!";
+        }
         dist.put(word1, 0);  // 起点到起点的距离为 0
         pq.add(word1);
 
@@ -226,7 +229,7 @@ public class Main {
         }
         Collections.reverse(path);
         if (path.size() == 1 || !path.get(0).equals(word1)) {
-            return "No path exists between " + word1 + " and " + word2;
+            return "The start and end words are the same!";
         }
 
         // 将路径格式化为字符串并返回
